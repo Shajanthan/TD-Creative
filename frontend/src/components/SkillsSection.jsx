@@ -192,7 +192,7 @@ const SkillsSection = () => {
                 className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
               >
                 {/* Icon */}
-                <div className="text-[#094162] mb-4">{service.icon}</div>
+                <div className="text-orange-500 mb-4">{service.icon}</div>
                 {/* Title */}
                 <h3 className="text-xl font-bold text-gray-800 mb-3">
                   {service.title}
@@ -203,7 +203,7 @@ const SkillsSection = () => {
                 <ul className="space-y-2">
                   {service.items.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-start">
-                      <span className="text-[#094162] mr-2 mt-1.5">
+                      <span className="text-orange-500 mr-2 mt-1.5">
                         <svg className="w-2 h-2 fill-current" viewBox="0 0 8 8">
                           <circle cx="4" cy="4" r="4" />
                         </svg>

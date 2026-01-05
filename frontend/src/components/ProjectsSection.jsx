@@ -66,7 +66,7 @@ const ProjectsSection = () => {
               onClick={() => setSelectedCategory(category)}
               className={`px-6 py-2 rounded-full font-medium transition-colors ${
                 selectedCategory === category
-                  ? "bg-[#094162] text-white"
+                  ? "bg-orange-500 text-white"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
@@ -89,7 +89,7 @@ const ProjectsSection = () => {
                   onClick={() => handleProjectSelect(project)}
                   className={`bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-all ${
                     selectedProject?.id === project.id
-                      ? "ring-2 ring-[#094162] shadow-lg"
+                      ? "ring-2 ring-orange-500 shadow-lg"
                       : "hover:shadow-lg"
                   }`}
                 >
@@ -153,7 +153,7 @@ const ProjectsSection = () => {
 
                     {/* Testimonial */}
                     {selectedProject.testimonial && (
-                      <div className="bg-gray-50 rounded-lg p-6 mb-6 border-l-4 border-[#094162]">
+                      <div className="bg-gray-50 rounded-lg p-6 mb-6 border-l-4 border-orange-500">
                         <p className="text-gray-700 italic mb-3">
                           "{selectedProject.testimonial}"
                         </p>
@@ -172,7 +172,7 @@ const ProjectsSection = () => {
                                 key={i}
                                 className={`${
                                   i < selectedProject.rating
-                                    ? "text-[#094162]"
+                                    ? "text-orange-500"
                                     : "text-gray-300"
                                 }`}
                               />
@@ -227,7 +227,7 @@ const ProjectsSection = () => {
                                 href={selectedProject.clientInstagram}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-gray-600 hover:text-[#094162] transition-colors"
+                                className="text-gray-600 hover:text-orange-500 transition-colors"
                               >
                                 <FaInstagram size={20} />
                               </a>
@@ -237,7 +237,7 @@ const ProjectsSection = () => {
                                 href={selectedProject.clientWebsite}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-gray-600 hover:text-[#094162] transition-colors"
+                                className="text-gray-600 hover:text-orange-500 transition-colors"
                               >
                                 <FaGlobe size={20} />
                               </a>
@@ -303,7 +303,7 @@ const ProjectsSection = () => {
 
                   {/* Testimonial */}
                   {selectedProject.testimonial && (
-                    <div className="bg-gray-50 rounded-lg p-4 mb-6 border-l-4 border-[#094162]">
+                    <div className="bg-gray-50 rounded-lg p-4 mb-6 border-l-4 border-orange-500">
                       <p className="text-gray-700 italic mb-3">
                         "{selectedProject.testimonial}"
                       </p>
@@ -322,7 +322,7 @@ const ProjectsSection = () => {
                               key={i}
                               className={`${
                                 i < selectedProject.rating
-                                  ? "text-[#094162]"
+                                  ? "text-orange-500"
                                   : "text-gray-300"
                               }`}
                             />
@@ -337,7 +337,7 @@ const ProjectsSection = () => {
                     <h3 className="text-xl font-bold text-gray-800 mb-4">
                       Client
                     </h3>
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-start gap-4 text-left">
                       <div className="w-14 h-14 rounded-full bg-gray-200 overflow-hidden flex-shrink-0">
                         <img
                           src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
@@ -377,7 +377,7 @@ const ProjectsSection = () => {
                               href={selectedProject.clientInstagram}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-gray-600 hover:text-[#094162] transition-colors"
+                              className="text-gray-600 hover:text-orange-500 transition-colors"
                             >
                               <FaInstagram size={18} />
                             </a>
@@ -387,7 +387,7 @@ const ProjectsSection = () => {
                               href={selectedProject.clientWebsite}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-gray-600 hover:text-[#094162] transition-colors"
+                              className="text-gray-600 hover:text-orange-500 transition-colors"
                             >
                               <FaGlobe size={18} />
                             </a>

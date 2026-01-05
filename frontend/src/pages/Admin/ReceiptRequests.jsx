@@ -211,12 +211,12 @@ const ReceiptRequests = () => {
                           </button>
                         )}
                         {request.phone && (
-                          <button
+                        <button
                             onClick={() => openWhatsApp(request.phone)}
                             className="px-3 py-1.5 bg-green-500 text-white text-xs rounded-lg hover:bg-green-600 transition-colors flex items-center gap-1"
-                          >
+                        >
                             <FaWhatsapp /> WhatsApp
-                          </button>
+                        </button>
                         )}
                       </div>
                     </td>
@@ -325,7 +325,7 @@ const ReceiptRequests = () => {
             <div className="p-6">
               <div className="grid md:grid-cols-2 gap-6">
                 {/* Left Column */}
-                <div className="space-y-4">
+              <div className="space-y-4">
                   <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
                     <div className="flex items-center gap-3 mb-2">
                       <div className="bg-[#094162] text-white p-2 rounded-lg">
@@ -375,11 +375,11 @@ const ReceiptRequests = () => {
                       <label className="font-semibold text-gray-700">
                         Project/Service
                       </label>
-                    </div>
+                </div>
                     <p className="text-gray-800 font-medium ml-12">
                       {selectedRequest.projectService}
                     </p>
-                  </div>
+                </div>
                 </div>
 
                 {/* Right Column */}
@@ -388,15 +388,15 @@ const ReceiptRequests = () => {
                     <div className="flex items-center gap-3 mb-2">
                       <div className="bg-orange-500 text-white p-2 rounded-lg">
                         <FaDollarSign />
-                      </div>
+                </div>
                       <label className="font-semibold text-gray-700">
                         Amount Paid
                       </label>
-                    </div>
+                </div>
                     <p className="text-gray-800 font-bold text-xl ml-12">
                       LKR {parseFloat(selectedRequest.amountPaid).toFixed(2)}
-                    </p>
-                  </div>
+                  </p>
+                </div>
 
                   <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
                     <div className="flex items-center gap-3 mb-2">
@@ -427,7 +427,7 @@ const ReceiptRequests = () => {
                           <FaCheckCircle />
                         ) : (
                           <FaClock />
-                        )}
+                )}
                       </div>
                       <label className="font-semibold text-gray-700">Status</label>
                     </div>
@@ -465,12 +465,12 @@ const ReceiptRequests = () => {
               {/* Action Buttons */}
               <div className="mt-8 flex flex-wrap gap-3 pt-6 border-t border-gray-200">
                 {selectedRequest.phone && (
-                  <button
+                <button
                     onClick={() => openWhatsApp(selectedRequest.phone)}
                     className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2 font-semibold shadow-md"
-                  >
+                >
                     <FaWhatsapp /> Open WhatsApp
-                  </button>
+                </button>
                 )}
                 {selectedRequest.status !== "completed" && (
                   <button
