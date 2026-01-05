@@ -160,77 +160,10 @@ const ContactSection = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          {/* Left Column - Information Panels (Always Visible) */}
-          <div className="space-y-6">
-            {/* Contact Information Panel */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-lg shadow-md p-6"
-            >
-              <h3 className="text-xl font-bold text-gray-800 mb-6">
-                Contact Information
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <FaEnvelope className="text-[#094162] text-xl mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium text-gray-800">Email</p>
-                    <p className="text-sm text-gray-600">hello@designer.com</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <FaPhoneAlt className="text-[#094162] text-xl mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium text-gray-800">Phone</p>
-                    <p className="text-sm text-gray-600">+1 (234) 567-890</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <FaMapMarkerAlt className="text-[#094162] text-xl mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium text-gray-800">Location</p>
-                    <p className="text-sm text-gray-600">San Francisco, CA</p>
-                    <p className="text-sm text-gray-600">United States</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Business Hours Panel */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-[#094162] rounded-lg shadow-md p-6"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <FaClock className="text-white text-xl" />
-                <h3 className="text-xl font-bold text-white">Business Hours</h3>
-              </div>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-white">Monday - Friday</span>
-                  <span className="text-white">9:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-white">Saturday</span>
-                  <span className="text-white">10:00 AM - 4:00 PM</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-white">Sunday</span>
-                  <span className="text-orange-400">Closed</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Right Column - Form (Contact Form or Receipt Request) */}
+          {/* Left Column - Form (Contact Form or Receipt Request) */}
           {!showReceiptForm ? (
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="bg-white rounded-lg shadow-md p-8"
@@ -357,13 +290,80 @@ const ContactSection = () => {
           ) : (
             <motion.div
               key="receipt-form"
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="bg-white rounded-lg shadow-md p-8"
             >
               <ReceiptRequestForm onSuccess={() => setShowReceiptForm(false)} />
             </motion.div>
           )}
+
+          {/* Right Column - Information Panels (Always Visible) */}
+          <div className="space-y-6">
+            {/* Contact Information Panel */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-lg shadow-md p-6"
+            >
+              <h3 className="text-xl font-bold text-gray-800 mb-6">
+                Contact Information
+              </h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <FaEnvelope className="text-[#094162] text-xl mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-gray-800">Email</p>
+                    <p className="text-sm text-gray-600">hello@designer.com</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <FaPhoneAlt className="text-[#094162] text-xl mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-gray-800">Phone</p>
+                    <p className="text-sm text-gray-600">+1 (234) 567-890</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <FaMapMarkerAlt className="text-[#094162] text-xl mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-gray-800">Location</p>
+                    <p className="text-sm text-gray-600">San Francisco, CA</p>
+                    <p className="text-sm text-gray-600">United States</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Business Hours Panel */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-[#094162] rounded-lg shadow-md p-6"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <FaClock className="text-white text-xl" />
+                <h3 className="text-xl font-bold text-white">Business Hours</h3>
+              </div>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-white">Monday - Friday</span>
+                  <span className="text-white">9:00 AM - 6:00 PM</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-white">Saturday</span>
+                  <span className="text-white">10:00 AM - 4:00 PM</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-white">Sunday</span>
+                  <span className="text-orange-400">Closed</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
