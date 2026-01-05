@@ -3,6 +3,10 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        raleway: ["Raleway", "sans-serif"],
+      },
       colors: {
         primary: {
           50: "#f0f9ff",

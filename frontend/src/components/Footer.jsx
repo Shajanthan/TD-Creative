@@ -24,7 +24,7 @@ const Footer = () => {
         {/* Upper Section - Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* TD Creative (PVT) LTD. */}
-          <div>
+          <div className="text-left">
             <h3 className="text-xl font-bold mb-4">TD Creative (PVT) LTD.</h3>
             <p className="text-gray-300 mb-4 leading-relaxed">
               Transforming ideas into stunning visual experiences. Specializing
@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="text-left">
             <h4 className="text-xl font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
@@ -81,8 +81,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
+          {/* Services - Hidden on mobile */}
+          <div className="hidden md:block text-left">
             <h4 className="text-xl font-bold mb-4">Services</h4>
             <ul className="space-y-2">
               <li>
@@ -129,7 +129,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Us */}
-          <div>
+          <div className="text-left">
             <h4 className="text-xl font-bold mb-4">Contact Us</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
@@ -153,9 +153,9 @@ const Footer = () => {
         </div>
 
         {/* Middle Section - Follow Us */}
-        <div className=" py-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex flex-col md:flex-row items-center gap-4">
+        <div className="py-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
               <h4 className="text-xl font-bold">Follow Us</h4>
               <div className="flex gap-3">
                 <a
@@ -186,7 +186,7 @@ const Footer = () => {
 
         {/* Bottom Section - Copyright and Legal Links */}
         <div className="border-t border-gray-600 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-sm text-left md:text-center">
             <p className="text-gray-300">
               © {currentYear} TDCreative. All rights reserved.
             </p>

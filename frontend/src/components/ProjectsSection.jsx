@@ -26,6 +26,34 @@ const ProjectsSection = () => {
     }
   }, [selectedCategory]);
 
+  // Disable background scroll when mobile modal is open
+  useEffect(() => {
+    if (showMobileModal) {
+      // Save current scroll position
+      const scrollY = window.scrollY;
+      // Disable scroll
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+    } else {
+      // Re-enable scroll
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      }
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+    };
+  }, [showMobileModal]);
+
   const handleProjectSelect = (project) => {
     setSelectedProject(project);
     // On mobile, show modal; on desktop, just update selection
@@ -34,24 +62,45 @@ const ProjectsSection = () => {
     }
   };
 
+  const closeMobileModal = () => {
+    setShowMobileModal(false);
+  };
+
   return (
-    <section id="projects" className="min-h-screen py-28 px-4 bg-white">
-      <div className="container mx-auto max-w-7xl text-center">
+    <section
+      id="projects"
+      className="min-h-screen py-28 px-4 bg-white overflow-visible"
+    >
+      <div className="container mx-auto max-w-7xl text-center overflow-visible">
         {/* Heading and Description */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-8"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Featured Projects
-          </h2>
-          <p className="text-lg text-gray-600">
+        <div className="mb-8">
+          <div
+            className="relative w-full mb-4 py-8 overflow-visible"
+            style={{ isolation: "isolate" }}
+          >
+            <h2 className="hidden md:block text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-bold text-gray-200 absolute z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap opacity-50 select-none pointer-events-none">
+              Featured Projects
+            </h2>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl font-bold text-gray-800 relative z-10"
+            >
+              Featured Projects
+            </motion.h2>
+          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-gray-600"
+          >
             Explore my portfolio of successful projects across various design
             disciplines
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
 
         {/* Filter Buttons */}
         <motion.div
@@ -153,7 +202,7 @@ const ProjectsSection = () => {
 
                     {/* Testimonial */}
                     {selectedProject.testimonial && (
-                      <div className="bg-gray-50 rounded-lg p-6 mb-6 border-l-4 border-orange-500">
+                      <div className="bg-gray-50 rounded-lg p-6 mb-6 border-l-4 border-orange-500 text-left">
                         <p className="text-gray-700 italic mb-3">
                           "{selectedProject.testimonial}"
                         </p>
@@ -255,22 +304,20 @@ const ProjectsSection = () => {
 
         {/* Mobile Modal for Project Details */}
         {showMobileModal && selectedProject && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 lg:hidden">
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-[52] flex items-center justify-center p-4 lg:hidden">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+              className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative"
             >
               {/* Close Button */}
-              <div className="sticky top-0 bg-white z-10 flex justify-end p-4 border-b">
-                <button
-                  onClick={() => setShowMobileModal(false)}
-                  className="text-gray-500 hover:text-gray-700 transition-colors p-2 hover:bg-gray-100 rounded-full"
-                >
-                  <FaTimes className="text-xl" />
-                </button>
-              </div>
+              <button
+                onClick={closeMobileModal}
+                className="fixed top-12 right-6 z-[60] w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-colors"
+              >
+                <FaTimes className="text-xl" />
+              </button>
 
               {/* Project Details Content */}
               <div className="flex flex-col">
@@ -303,7 +350,7 @@ const ProjectsSection = () => {
 
                   {/* Testimonial */}
                   {selectedProject.testimonial && (
-                    <div className="bg-gray-50 rounded-lg p-4 mb-6 border-l-4 border-orange-500">
+                    <div className="bg-gray-50 rounded-lg p-4 mb-6 border-l-4 border-orange-500 text-left">
                       <p className="text-gray-700 italic mb-3">
                         "{selectedProject.testimonial}"
                       </p>

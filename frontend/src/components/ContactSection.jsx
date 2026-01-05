@@ -112,8 +112,11 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen py-28 px-4 bg-gray-50">
-      <div className="container mx-auto max-w-7xl">
+    <section
+      id="contact"
+      className="min-h-screen py-28 px-4 bg-gray-50 overflow-visible"
+    >
+      <div className="container mx-auto max-w-7xl overflow-visible">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -121,9 +124,22 @@ const ContactSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Get In Touch
-          </h2>
+          <div
+            className="relative w-full mb-4 py-8 overflow-visible"
+            style={{ isolation: "isolate" }}
+          >
+            <h2 className="hidden md:block text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-bold text-gray-200 absolute z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap opacity-50 select-none pointer-events-none">
+              Get In Touch
+            </h2>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl font-bold text-gray-800 relative z-10"
+            >
+              Get In Touch
+            </motion.h2>
+          </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
             Have a project in mind or need a receipt? I'm here to help
           </p>
@@ -160,13 +176,13 @@ const ContactSection = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          {/* Left Column - Form (Contact Form or Receipt Request) */}
+          {/* Form Column - First on mobile, Right on desktop */}
           {!showReceiptForm ? (
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-lg shadow-md p-8"
+              className="bg-white rounded-lg shadow-md p-8 order-1 lg:order-2"
             >
               {success && (
                 <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
@@ -292,14 +308,14 @@ const ContactSection = () => {
               key="receipt-form"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="bg-white rounded-lg shadow-md p-8"
+              className="bg-white rounded-lg shadow-md p-8 order-1 lg:order-2"
             >
               <ReceiptRequestForm onSuccess={() => setShowReceiptForm(false)} />
             </motion.div>
           )}
 
-          {/* Right Column - Information Panels (Always Visible) */}
-          <div className="space-y-6">
+          {/* Information Panels Column - Second on mobile, Left on desktop */}
+          <div className="space-y-6 order-2 lg:order-1">
             {/* Contact Information Panel */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}

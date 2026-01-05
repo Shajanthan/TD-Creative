@@ -13,20 +13,53 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Apply Poppins to all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
 #root {
   min-height: 100vh;
 }
 
-/* Custom Scrollbar */
+/* Global Scrollbar - Theme Colors */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff6b35;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e55a2b;
+}
+
+/* Custom Scrollbar - Theme Colors (for specific elements) */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-button {
+  display: none;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
@@ -35,11 +68,59 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #ff6b35;
   border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #e55a2b;
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff6b35 #f1f1f1;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #ff6b35 #f1f1f1;
+}
+
+/* Swiper Custom Styles for Feedback Section */
+.client-reviews-swiper .swiper-pagination-bullet,
+.endorsements-swiper .swiper-pagination-bullet {
+  background: #094162;
+  opacity: 0.5;
+  width: 12px;
+  height: 12px;
+}
+
+.client-reviews-swiper .swiper-pagination-bullet-active,
+.endorsements-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #094162;
+}
+
+.client-reviews-swiper .swiper-pagination,
+.endorsements-swiper .swiper-pagination {
+  bottom: 0;
+  position: relative;
+  margin-top: 24px;
+}
+
+/* Ensure equal height for Swiper slides */
+.client-reviews-swiper .swiper-slide,
+.endorsements-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+.client-reviews-swiper .swiper-slide > div,
+.endorsements-swiper .swiper-slide > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 

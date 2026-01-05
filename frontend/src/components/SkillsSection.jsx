@@ -72,54 +72,66 @@ const SkillsSection = () => {
   const tools = [
     {
       name: "Adobe Photoshop",
-      icon: "Ps",
-      color: "bg-blue-600",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg",
       function: "Photo Editing",
     },
     {
       name: "Adobe Illustrator",
-      icon: "Ai",
-      color: "bg-orange-600",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg",
       function: "Vector Graphics",
     },
     {
       name: "Adobe InDesign",
-      icon: "Id",
-      color: "bg-red-700",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/4/48/Adobe_InDesign_CC_icon.svg",
       function: "Layout & Publishing",
     },
     {
       name: "After Effects",
-      icon: "Ae",
-      color: "bg-purple-600",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg",
       function: "Motion Graphics",
     },
     {
       name: "Lightroom",
-      icon: "Lr",
-      color: "bg-blue-500",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Adobe_Photoshop_Lightroom_CC_logo.svg",
       function: "Image Editing",
     },
   ];
 
   return (
-    <section id="skills" className="min-h-screen py-28 px-4 bg-white">
-      <div className="container mx-auto max-w-6xl">
+    <section
+      id="skills"
+      className="min-h-screen py-28 px-4 bg-white overflow-visible"
+    >
+      <div className="container mx-auto max-w-6xl overflow-visible">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Tools I Use
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <div className="text-center mb-12">
+          <div
+            className="relative w-full mb-4 py-8 overflow-visible"
+            style={{ isolation: "isolate" }}
+          >
+            <h2 className="hidden md:block text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-bold text-gray-200 absolute z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap opacity-50 select-none pointer-events-none">
+              Tools I Use
+            </h2>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl font-bold text-gray-800 relative z-10"
+            >
+              Tools I Use
+            </motion.h2>
+          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-gray-600 max-w-2xl mx-auto"
+          >
             Professional design tools and software to deliver high-quality
             creative work
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
 
         {/* Tools Grid */}
         <div className="flex flex-wrap justify-center gap-6 mb-12">
@@ -133,12 +145,12 @@ const SkillsSection = () => {
               className="bg-gray-100 rounded-lg p-6 min-w-[180px] text-center"
             >
               {/* Icon */}
-              <div
-                className={`${tool.color} w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4`}
-              >
-                <span className="text-white text-2xl font-bold">
-                  {tool.icon}
-                </span>
+              <div className="w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4 bg-white shadow-sm">
+                <img
+                  src={tool.icon}
+                  alt={tool.name}
+                  className="w-full h-full object-contain"
+                />
               </div>
               {/* Name */}
               <h3 className="text-lg font-semibold text-gray-800 mb-2">
@@ -171,9 +183,22 @@ const SkillsSection = () => {
         >
           {/* Header */}
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Services Provided
-            </h2>
+            <div
+              className="relative w-full mb-4 py-8 overflow-visible"
+              style={{ isolation: "isolate" }}
+            >
+              <h2 className="hidden md:block text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-bold text-gray-200 absolute z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap opacity-50 select-none pointer-events-none">
+                Services Provided
+              </h2>
+              <motion.h2
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-4xl md:text-5xl font-bold text-gray-800 relative z-10"
+              >
+                Services Provided
+              </motion.h2>
+            </div>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Comprehensive graphic design services tailored to meet your
               creative needs
@@ -189,7 +214,16 @@ const SkillsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+                className="bg-gradient-to-br from-white to-gray-50 rounded-lg p-6 transition-all duration-300 hover:scale-[1.02] border border-gray-100"
+                style={{
+                  boxShadow: `
+                    inset 0 1px 2px rgba(255, 255, 255, 0.8),
+                    inset 0 -1px 2px rgba(0, 0, 0, 0.05),
+                    0 4px 8px rgba(0, 0, 0, 0.08),
+                    0 2px 4px rgba(0, 0, 0, 0.06),
+                    0 0 0 1px rgba(0, 0, 0, 0.03)
+                  `,
+                }}
               >
                 {/* Icon */}
                 <div className="text-orange-500 mb-4">{service.icon}</div>

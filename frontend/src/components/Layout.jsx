@@ -83,8 +83,10 @@ const Layout = ({ children }) => {
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed left-0 right-0 z-50 transition-all duration-300 bg-white ${
-          isScrolled || isMobileMenuOpen ? "shadow-md" : ""
+        className={`fixed left-0 right-0 z-[51] transition-all duration-300 ${
+          isScrolled || isMobileMenuOpen
+            ? "bg-white/80 backdrop-blur-md shadow-md border-b border-white/20"
+            : "bg-white/80 backdrop-blur-md border-b border-white/20"
         }`}
       >
         <nav className="container mx-auto px-4 py-4">
@@ -101,7 +103,7 @@ const Layout = ({ children }) => {
                 className="h-10 w-auto object-contain"
               />
               {/* Brand Name */}
-              <span className="text-xl font-semibold text-gray-800 group-hover:text-gray-600 transition-colors">
+              <span className="text-xl font-bold text-[#094162] group-hover:text-gray-600 transition-colors">
                 TD Creative
               </span>
             </button>
@@ -113,7 +115,7 @@ const Layout = ({ children }) => {
                   <button
                     key={item.sectionId}
                     onClick={() => scrollToSection(item.sectionId)}
-                    className={`text-sm font-medium transition-colors ${
+                    className={`text-base font-medium transition-colors ${
                       activeSection === item.sectionId
                         ? "text-gray-900 font-semibold"
                         : "text-gray-600 hover:text-gray-900"
@@ -128,7 +130,7 @@ const Layout = ({ children }) => {
             {/* Contact Us Button */}
             <button
               onClick={() => scrollToSection("contact")}
-              className="hidden md:block px-6 py-2 border-2 border-orange-500 bg-white text-orange-500 rounded-full font-medium hover:bg-orange-50 transition-colors"
+              className="hidden md:block px-6 py-2 border-2 border-orange-500 bg-white text-orange-500 rounded-full font-semibold hover:bg-orange-500 hover:text-white transition-colors duration-200"
             >
               Contact Us
             </button>

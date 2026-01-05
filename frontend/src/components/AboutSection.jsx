@@ -93,7 +93,7 @@ const AboutSection = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="w-full lg:h-[600px] h-[450px] rounded-lg overflow-hidden shadow-2xl bg-gray-200"
+                className="w-full lg:h-[600px] h-[400px] rounded-lg overflow-hidden shadow-2xl bg-gray-200"
               >
                 <img
                   src={profileImage}
@@ -108,7 +108,7 @@ const AboutSection = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.6, type: "spring" }}
-                className="absolute top-[200px] lg:top-[250px] -translate-y-1/2 -right-[40px] md:-right-[50px] w-16 h-16 md:w-20 md:h-20 bg-white rounded-full p-2 md:p-3 shadow-lg flex items-center justify-center z-10"
+                className="absolute top-[170px] lg:top-[250px] -translate-y-1/2 -right-[40px] md:-right-[50px] w-16 h-16 md:w-20 md:h-20 bg-white rounded-full p-2 md:p-3 shadow-lg flex items-center justify-center z-10"
               >
                 <img
                   src={tdLogo}

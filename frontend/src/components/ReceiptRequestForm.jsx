@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import api from '../utils/api'
-import { FaUser, FaPhone, FaBriefcase, FaDollarSign, FaCalendarAlt, FaFileAlt, FaPaperPlane } from 'react-icons/fa'
+import { FaUser, FaPhone, FaBriefcase, FaDollarSign, FaFileAlt, FaPaperPlane } from 'react-icons/fa'
+import CustomDatePicker from './CustomDatePicker'
 
 const ReceiptRequestForm = ({ onSuccess }) => {
   const [formData, setFormData] = useState({
@@ -24,9 +25,13 @@ const ReceiptRequestForm = ({ onSuccess }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     
-    // Validation: Phone/WhatsApp is required
+    // Validation
     if (!formData.phone) {
       setError('WhatsApp number is required')
+      return
+    }
+    if (!formData.date) {
+      setError('Date is required')
       return
     }
 
@@ -158,18 +163,11 @@ const ReceiptRequestForm = ({ onSuccess }) => {
             <label htmlFor="date" className="block text-gray-700 font-medium mb-2">
               Date <span className="text-red-500">*</span>
             </label>
-            <div className="relative">
-              <FaCalendarAlt className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" />
-              <input
-                type="date"
-                id="date"
-                name="date"
-                required
-                value={formData.date}
-                onChange={handleChange}
-                className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#094162] focus:border-transparent"
-              />
-            </div>
+            <CustomDatePicker
+              value={formData.date}
+              onChange={handleChange}
+              required
+            />
           </div>
         </div>
 

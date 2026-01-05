@@ -32,15 +32,13 @@ const HomeSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight break-words"
+              className="text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.3] break-words"
             >
-              <span className="text-[#094162]">Crafting your</span>
-              <br />
-              <span className="text-[#094162]">
+              <span className="text-[#094162] block mb-2">Crafting your</span>
+              <span className="text-[#094162] block mb-2">
                 <span className="text-orange-500">story</span>, pixel by
               </span>
-              <br />
-              <span className="text-[#094162]">pixel.</span>
+              <span className="text-[#094162] block">pixel.</span>
             </motion.h1>
 
             {/* Body Text */}
@@ -70,7 +68,7 @@ const HomeSection = () => {
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-orange-500 text-orange-500 bg-white rounded-3xl font-semibold hover:bg-orange-50 transition-colors text-sm sm:text-base w-full sm:w-auto"
+                className="px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-[#094162] text-[#094162] bg-white rounded-3xl font-semibold hover:bg-[#094162] hover:text-white transition-colors text-sm sm:text-base w-full sm:w-auto"
               >
                 Contact Us
               </button>

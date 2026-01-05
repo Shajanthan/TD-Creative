@@ -54,11 +54,11 @@ export const projects = [
     name: "EcoLiving Sustainable Packaging",
     category: "Packaging Design",
     thumbnail:
-      "https://images.unsplash.com/photo-1608317139108-22c8f8b0c96f?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1608317139108-22c8f8b0c96f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1608317139108-22c8f8b0c96f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1608317139108-22c8f8b0c96f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop",
     ],
     description:
       "Eye-catching product packaging design that stands out on shelves and communicates brand values. Focused on sustainability and eco-friendly materials while maintaining visual appeal.",
@@ -140,4 +140,3 @@ export const projects = [
     rating: 5,
   },
 ];
-
