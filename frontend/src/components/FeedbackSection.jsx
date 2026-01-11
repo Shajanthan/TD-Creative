@@ -5,107 +5,86 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import ratch from "../img/Ratsch.png";
+import kannamma from "../img/Kannamma.png";
+import smartPro from "../img/Smartpro.png";
+import gnanam from "../img/gnanam.png";
+import thankamma from "../img/thankamma.png";
+import agriwealth from "../img/agriwealth.png";
+import aia from "../img/aia.jpg";
+import sajanth from "../img/sajanth.png";
+import sjm from "../img/sjm.png";
+import ads from "../img/ads.png";
+import angelsTouch from "../img/angelsTouch.png";
+import trioTreats from "../img/trioTreats.png";
+import towshi from "../img/towshi.png";
 
 const FeedbackSection = () => {
   const clientReviews = [
     {
-      text: "Working with this designer was an absolute pleasure. The attention to detail and creative vision transformed our brand identity beyond our expectations. Every deliverable was on time and exceeded our quality standards. Highly recommended!",
-      name: "Jennifer Martinez",
-      title: "Chief Marketing Officer",
-      company: "TechVision Global",
-      avatar:
-        "https://ui-avatars.com/api/?name=Jennifer+Martinez&background=094162&color=fff&size=128",
+      text: "Had a great time working with TD Creative (Pvt) Ltd on the logo design for our Ratsch Productions! Loved the clean design, strong branding, and super professional approach. Truly happy with the result—wishing you lots more success ahead!",
+      name: "Ratsch Productions",
+      avatar: ratch,
     },
     {
-      text: "An exceptional designer with a unique ability to understand client needs and translate them into stunning visuals. The UI/UX work done for our mobile app resulted in a 70% increase in user engagement. Professional, creative, and reliable.",
-      name: "Michael Chen",
-      title: "Product Director",
-      company: "InnovateLabs",
-      avatar:
-        "https://ui-avatars.com/api/?name=Michael+Chen&background=094162&color=fff&size=128",
+      text: "A huge thank you to TD Creative Pvt (Ltd) for designing my beautiful logo! 🎨✨ Your creativity and effort truly brought Kilinochchi Kannamma to life! ❤️",
+      name: "Kilinochchi Kannama",
+      avatar: kannamma,
     },
     {
-      text: "The website design exceeded all expectations. Not only is it visually stunning, but the user experience is seamless. Our bounce rate dropped by 35% and conversion rates increased significantly. Best investment we've made!",
-      name: "Alexander Reed",
-      title: "Digital Strategy Manager",
-      company: "NextGen Solutions",
-      avatar:
-        "https://ui-avatars.com/api/?name=Alexander+Reed&background=094162&color=fff&size=128",
+      text: "Thank you TD Creative for your impressive work. It was highly professional, creative and attentive to my ideas. The final design exceeded my expectations. I express my heartfelt appreciation. 😍Congratulations for your growth!💐 I highly recommend their services to anyone looking for high-quality, thoughtful graphic design.😎",
+      name: "SmartPro Enlish Academy",
+      avatar: smartPro,
     },
     {
-      text: "Outstanding work on our packaging design! The creative solutions provided not only enhanced our product's appeal but also improved our market positioning. The designer's professionalism and creativity are unmatched.",
-      name: "Sarah Johnson",
-      title: "Brand Manager",
-      company: "Premium Products Co.",
-      avatar:
-        "https://ui-avatars.com/api/?name=Sarah+Johnson&background=094162&color=fff&size=128",
+      text: "Congratulations TD creative! You are an excellent and exemplary designer.. You have captured the ideas perfectly in just one visit and registered the logo for the company. Giving the expected color and shape to the customer on time is an excellent act. We wish your company further growth.",
+      name: "Thankamma Auto Mobile",
+      avatar: gnanam,
     },
     {
-      text: "The rebranding project was executed flawlessly. From initial concept to final implementation, every step was handled with expertise and care. Our brand now stands out in a crowded marketplace.",
+      text: "எனது நிறுவனத்திற்கான Logo Design மற்றும் Light Board மிகவும் அழகாக, தரமாக, கவனத்தை ஈர்க்கும் வகையில் உருவாக்கி அளித்த TD Creative நிறுவனத்திற்கு மனமார்ந்த நன்றியைத் தெரிவித்துக் கொள்கிறேன்.உங்கள் கலை நுணுக்கமும் தொழில்முறை அணுகுமுறையும் எனது Thankamma Automobile முன்னேற்றத்தில் முக்கிய பங்கு வகிக்கிறது. மீண்டும் ஒருமுறை, உங்கள் உழைப்புக்கும் ஆதரவுக்கும் என் இதயப்பூர்வ நன்றி!",
       name: "David Williams",
-      title: "CEO",
-      company: "Startup Innovations",
-      avatar:
-        "https://ui-avatars.com/api/?name=David+Williams&background=094162&color=fff&size=128",
+      avatar: thankamma,
     },
     {
-      text: "Exceptional service and results! The marketing materials created for our campaign were not only beautiful but also highly effective. We saw a significant increase in customer engagement and sales.",
-      name: "Emily Brown",
-      title: "Marketing Director",
-      company: "Growth Solutions",
-      avatar:
-        "https://ui-avatars.com/api/?name=Emily+Brown&background=094162&color=fff&size=128",
-    },
-  ];
-
-  const professionalEndorsements = [
-    {
-      text: "I've had the privilege of witnessing remarkable growth and excellence in design work. The commitment to staying current with design trends while maintaining timeless principles is truly impressive. A true professional in every sense.",
-      name: "Rachel Thompson",
-      title: "Senior Design Director",
-      company: "Creative Studio Pro",
-      avatar:
-        "https://ui-avatars.com/api/?name=Rachel+Thompson&background=094162&color=fff&size=128",
+      text: "மிக எளிமையாக வளர்ந்து வரும் வடமாகாணத்தின் ஆளுமை, நேர்த்தியானவேலை, நேரமுகாமை, நெகிழ்ச்சியான நபர். நம்பிப்போகலாம், வாழ்த்துக்கள் சகோ. A simple and steadily rising personality from the Northern Province —a dedicated worker, punctual, and a pleasant person. Truly dependable. Congratulations, brother.",
+      name: "Agri Wealth",
+      avatar: agriwealth,
     },
     {
-      text: "One of the most talented designers I've worked alongside. The ability to balance aesthetic beauty with functional design is extraordinary. Always brings fresh perspectives and innovative solutions to every project.",
-      name: "Sophia Anderson",
-      title: "Creative Lead",
-      company: "Design Collective",
-      avatar:
-        "https://ui-avatars.com/api/?name=Sophia+Anderson&background=094162&color=fff&size=128",
+      text: "Friendly, elegant, timeless, amazing, unique, innovative design that accurately reflects our thoughts. I will always recommend it to everyone without hesitation.",
+      name: "AIA",
+      avatar: aia,
     },
     {
-      text: "It's been inspiring to see such dedication to craft and continuous improvement. The design work consistently demonstrates both technical excellence and artistic vision. A valuable asset to any project or team.",
-      name: "James Mitchell",
-      title: "Art Director",
-      company: "Pixel Perfect Agency",
-      avatar:
-        "https://ui-avatars.com/api/?name=James+Mitchell&background=094162&color=fff&size=128",
+      text: "Really satisfied🤗 with the work and did a great job🔥. They patiently did all  the requirements I have asked Thanks For You TD Creative 💥💫",
+      name: "Sajanth Sales",
+      avatar: sajanth,
     },
     {
-      text: "A master of visual storytelling. The ability to translate complex ideas into clear, compelling designs is remarkable. Every project showcases a deep understanding of both design principles and client needs.",
-      name: "Olivia Davis",
-      title: "Creative Director",
-      company: "Visual Arts Studio",
-      avatar:
-        "https://ui-avatars.com/api/?name=Olivia+Davis&background=094162&color=fff&size=128",
+      text: "Thank you for your valuable work   TD Creative ✨️.  Your design  exceeded our expectations and we love it. We appreciate your creativity and timely delivery.",
+      name: "SJM Engineering & Construction",
+      avatar: sjm,
     },
     {
-      text: "Working with this designer has been an absolute delight. The attention to detail, creative problem-solving, and professional approach make them stand out in the industry. Highly recommend for any design project.",
-      name: "Robert Taylor",
-      title: "Design Lead",
-      company: "Innovation Labs",
-      avatar:
-        "https://ui-avatars.com/api/?name=Robert+Taylor&background=094162&color=fff&size=128",
+      text: "Kudos to TD Creative Graphics Design & Solution for delivering a masterpiece of innovation with the logo for Ads Buddy International! Your talent in transforming ideas into a striking visual identity is truly unparalleled. May your creative brilliance continue to inspire, disrupt, and redefine the art of design!. A Massive Thanks to TD Creative @Danujan! 🤗😍. I am big fan of your phenomenal work, machchi! 🔥🖤",
+      name: "Ads Buddy International",
+      avatar: ads,
     },
     {
-      text: "The design work speaks for itself - innovative, polished, and effective. This designer brings a unique perspective to every project and consistently delivers exceptional results that exceed expectations.",
-      name: "Emma Wilson",
-      title: "Senior Art Director",
-      company: "Creative Minds Agency",
-      avatar:
-        "https://ui-avatars.com/api/?name=Emma+Wilson&background=094162&color=fff&size=128",
+      text: "Thankyou for your amazing work danujan 😍😍 I'm very satisfied with your work",
+      name: "Angel's Touch",
+      avatar: angelsTouch,
+    },
+    {
+      text: "I truly appreciate TD Creative for their exceptional work! Their professionalism, creativity, and remarkable patience throughout the entire process made the experience truly enjoyable. They carefully understood all my requirements and delivered exactly what I envisioned even better than I expected ❤️. Your designs beautifully reflect both quality and dedication. I sincerely appreciate your effort and commitment. Wishing you continued success and many more creative achievements ahead!. Highly recommended for anyone looking for reliable and innovative design services.",
+      name: "SJM Engineering & Construction",
+      avatar: trioTreats,
+    },
+    {
+      text: "I recommended  @TD Creactive And @Danujandaniel. He took short time to creation of this logo And Board designs. I'm very Impressive this logo. I did not  give Eny ideas to him .  but He make this designs very Elegant.  Thank you Thampi Danujan",
+      name: "SJM Engineering & Construction",
+      avatar: towshi,
     },
   ];
 
@@ -202,7 +181,7 @@ const FeedbackSection = () => {
               className="client-reviews-swiper"
             >
               {clientReviews.map((review, index) => (
-                <SwiperSlide key={index} className="h-auto">
+                <SwiperSlide key={index} className="h-auto select-none">
                   <div className="bg-white rounded-lg border-2 border-gray-200 p-6 hover:border-orange-500 transition-colors flex flex-col h-full min-h-[320px] cursor-pointer">
                     {renderStars()}
                     <p className="text-sm text-gray-700 mb-6 leading-relaxed flex-1">
@@ -212,85 +191,12 @@ const FeedbackSection = () => {
                       <img
                         src={review.avatar}
                         alt={review.name}
-                        className="w-12 h-12 rounded-full object-cover"
+                        className="w-14 h-14 rounded-full object-cover"
                       />
                       <div>
                         <h4 className="font-bold text-gray-800">
                           {review.name}
                         </h4>
-                        <p className="text-sm text-gray-600">
-                          {review.title} at {review.company}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </motion.div>
-
-        {/* Professional Endorsements Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <div className="flex items-center justify-center mb-12">
-            <div className="flex-1 h-px bg-purple-500"></div>
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 px-6 text-center whitespace-nowrap">
-              Professional Endorsements
-            </h3>
-            <div className="flex-1 h-px bg-purple-500"></div>
-          </div>
-
-          <div className="relative pb-16">
-            <Swiper
-              modules={[Pagination, Autoplay]}
-              spaceBetween={24}
-              slidesPerView={1}
-              breakpoints={{
-                640: {
-                  slidesPerView: 1,
-                },
-                768: {
-                  slidesPerView: 2,
-                },
-                1024: {
-                  slidesPerView: 3,
-                },
-              }}
-              pagination={{
-                clickable: true,
-                dynamicBullets: true,
-              }}
-              autoplay={{
-                delay: 4000,
-                disableOnInteraction: false,
-              }}
-              loop={true}
-              className="endorsements-swiper"
-            >
-              {professionalEndorsements.map((endorsement, index) => (
-                <SwiperSlide key={index} className="h-auto">
-                  <div className="bg-white rounded-lg border-2 border-gray-200 p-6 hover:border-orange-500 transition-colors flex flex-col h-full min-h-[320px] cursor-pointer">
-                    {renderStars()}
-                    <p className="text-sm text-gray-700 mb-6 leading-relaxed flex-1">
-                      {endorsement.text}
-                    </p>
-                    <div className="flex items-center gap-4 mt-auto">
-                      <img
-                        src={endorsement.avatar}
-                        alt={endorsement.name}
-                        className="w-12 h-12 rounded-full object-cover"
-                      />
-                      <div>
-                        <h4 className="font-bold text-gray-800">
-                          {endorsement.name}
-                        </h4>
-                        <p className="text-sm text-gray-600">
-                          {endorsement.title} at {endorsement.company}
-                        </p>
                       </div>
                     </div>
                   </div>

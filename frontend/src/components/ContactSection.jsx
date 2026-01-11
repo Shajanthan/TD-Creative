@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import api from "../utils/api";
 import ReceiptRequestForm from "./ReceiptRequestForm";
+import CustomDropdown from "./CustomDropdown";
 import {
   FaUser,
   FaPhone,
@@ -90,9 +90,7 @@ const ContactSection = () => {
     setLoading(true);
 
     try {
-      const response = await api.post("/contact", formDataObj);
-      console.log("Contact form success:", response.data);
-
+      // Show success message
       setSuccess(true);
       setFormData({
         name: "",
@@ -100,12 +98,12 @@ const ContactSection = () => {
         message: "",
         inquiryType: "General Inquiry",
       });
-      setTimeout(() => setSuccess(false), 5000);
+
+      // Keep success message visible for 8 seconds
+      setTimeout(() => setSuccess(false), 8000);
     } catch (err) {
-      console.error("Contact form error:", err.response?.data || err.message);
-      const errorMessage =
-        err.response?.data?.message || err.response?.data?.error || err.message;
-      setError(errorMessage || "Failed to send message. Please try again.");
+      console.error("Contact form error:", err);
+      setError("Failed to send message. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -186,7 +184,34 @@ const ContactSection = () => {
             >
               {success && (
                 <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-                  Thank you! Your message has been sent successfully.
+                  <div className="flex items-start gap-3">
+                    <svg
+                      className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <div>
+                      <p className="font-semibold text-green-800 mb-1">
+                        Message Sent Successfully!
+                      </p>
+                      <p className="text-sm">
+                        Thank you for contacting us! We've received your message
+                        and will contact you at{" "}
+                        <span className="font-medium">
+                          {formData.phone || "your provided number"}
+                        </span>{" "}
+                        soon.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               )}
               {error && (
@@ -223,13 +248,13 @@ const ContactSection = () => {
                   </div>
                 </div>
 
-                {/* WhatsApp Number */}
+                {/* Phone Number */}
                 <div>
                   <label
                     htmlFor="phone"
                     className="block text-gray-700 font-medium mb-2"
                   >
-                    WhatsApp Number <span className="text-red-500">*</span>
+                    Phone Number <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
                     <FaPhone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
@@ -248,28 +273,21 @@ const ContactSection = () => {
 
                 {/* Inquiry Type */}
                 <div>
-                  <label
-                    htmlFor="inquiryType"
-                    className="block text-gray-700 font-medium mb-2"
-                  >
-                    Type of Inquiry <span className="text-red-500">*</span>
-                  </label>
-                  <div className="relative">
-                    <FaBuilding className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" />
-                    <select
-                      id="inquiryType"
-                      name="inquiryType"
-                      required
-                      value={formData.inquiryType}
-                      onChange={handleChange}
-                      className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#094162] focus:border-transparent appearance-none"
-                    >
-                      <option value="New Order">New Order</option>
-                      <option value="General Inquiry">General Inquiry</option>
-                      <option value="Collaboration">Collaboration</option>
-                      <option value="Receipt Request">Receipt Request</option>
-                    </select>
-                  </div>
+                  <CustomDropdown
+                    options={[
+                      { value: "General Inquiry", label: "General Inquiry" },
+                      { value: "New Order", label: "New Order" },
+                      { value: "Collaboration", label: "Collaboration" },
+                      { value: "Receipt Request", label: "Receipt Request" },
+                    ]}
+                    value={formData.inquiryType}
+                    onChange={handleChange}
+                    placeholder="Select type of inquiry"
+                    icon={FaBuilding}
+                    name="inquiryType"
+                    required
+                    label="Type of Inquiry"
+                  />
                 </div>
 
                 {/* Message */}

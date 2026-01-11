@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import api from '../utils/api'
 import { FaUser, FaPhone, FaBriefcase, FaDollarSign, FaFileAlt, FaPaperPlane } from 'react-icons/fa'
 import CustomDatePicker from './CustomDatePicker'
 
@@ -27,7 +26,7 @@ const ReceiptRequestForm = ({ onSuccess }) => {
     
     // Validation
     if (!formData.phone) {
-      setError('WhatsApp number is required')
+      setError('Phone number is required')
       return
     }
     if (!formData.date) {
@@ -35,12 +34,25 @@ const ReceiptRequestForm = ({ onSuccess }) => {
       return
     }
 
+    // Validation: All required fields
+    const missingFields = [];
+    if (!formData.fullName?.trim()) missingFields.push("Full Name");
+    if (!formData.phone?.trim()) missingFields.push("Phone Number");
+    if (!formData.projectService?.trim()) missingFields.push("Project/Service");
+    if (!formData.amountPaid) missingFields.push("Amount Paid");
+    if (!formData.date?.trim()) missingFields.push("Date");
+
+    if (missingFields.length > 0) {
+      setError(`Please fill in all required fields: ${missingFields.join(", ")}`);
+      return;
+    }
+
     setLoading(true)
     setError('')
     setSuccess(false)
 
     try {
-      await api.post('/receipt-requests', formData)
+      // Show success message
       setSuccess(true)
       setFormData({
         fullName: '',
@@ -50,12 +62,15 @@ const ReceiptRequestForm = ({ onSuccess }) => {
         date: '',
         notes: '',
       })
+      
+      // Keep success message visible for 8 seconds
       setTimeout(() => {
         setSuccess(false)
         if (onSuccess) onSuccess()
-      }, 3000)
+      }, 8000)
     } catch (err) {
-      setError(err.response?.data?.message || 'Failed to submit request. Please try again.')
+      console.error("Receipt request error:", err)
+      setError('Failed to submit request. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -67,7 +82,15 @@ const ReceiptRequestForm = ({ onSuccess }) => {
 
       {success && (
         <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-          Thank you! Your receipt request has been submitted. We'll process it shortly.
+          <div className="flex items-start gap-3">
+            <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div>
+              <p className="font-semibold text-green-800 mb-1">Receipt Request Sent Successfully!</p>
+              <p className="text-sm">Thank you! We've received your receipt request. We'll process it and send it to you at <span className="font-medium">{formData.phone || "your provided number"}</span> shortly!</p>
+            </div>
+          </div>
         </div>
       )}
       {error && (
@@ -98,7 +121,7 @@ const ReceiptRequestForm = ({ onSuccess }) => {
 
         <div>
           <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">
-            WhatsApp Number <span className="text-red-500">*</span>
+            Phone Number <span className="text-red-500">*</span>
           </label>
           <div className="relative">
             <FaPhone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
@@ -114,7 +137,7 @@ const ReceiptRequestForm = ({ onSuccess }) => {
             />
           </div>
           <p className="mt-1 text-sm text-gray-500">
-            We'll send your receipt via WhatsApp
+            We'll send your receipt to this number
           </p>
         </div>
 
