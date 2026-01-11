@@ -43,7 +43,7 @@ const FeedbackSection = () => {
     },
     {
       text: "எனது நிறுவனத்திற்கான Logo Design மற்றும் Light Board மிகவும் அழகாக, தரமாக, கவனத்தை ஈர்க்கும் வகையில் உருவாக்கி அளித்த TD Creative நிறுவனத்திற்கு மனமார்ந்த நன்றியைத் தெரிவித்துக் கொள்கிறேன்.உங்கள் கலை நுணுக்கமும் தொழில்முறை அணுகுமுறையும் எனது Thankamma Automobile முன்னேற்றத்தில் முக்கிய பங்கு வகிக்கிறது. மீண்டும் ஒருமுறை, உங்கள் உழைப்புக்கும் ஆதரவுக்கும் என் இதயப்பூர்வ நன்றி!",
-      name: "David Williams",
+      name: "Thankamma Automobile ",
       avatar: thankamma,
     },
     {
@@ -78,12 +78,12 @@ const FeedbackSection = () => {
     },
     {
       text: "I truly appreciate TD Creative for their exceptional work! Their professionalism, creativity, and remarkable patience throughout the entire process made the experience truly enjoyable. They carefully understood all my requirements and delivered exactly what I envisioned even better than I expected ❤️. Your designs beautifully reflect both quality and dedication. I sincerely appreciate your effort and commitment. Wishing you continued success and many more creative achievements ahead!. Highly recommended for anyone looking for reliable and innovative design services.",
-      name: "SJM Engineering & Construction",
+      name: "Trio Treats",
       avatar: trioTreats,
     },
     {
       text: "I recommended  @TD Creactive And @Danujandaniel. He took short time to creation of this logo And Board designs. I'm very Impressive this logo. I did not  give Eny ideas to him .  but He make this designs very Elegant.  Thank you Thampi Danujan",
-      name: "SJM Engineering & Construction",
+      name: "Lowshi Total Care & Academy",
       avatar: towshi,
     },
   ];
