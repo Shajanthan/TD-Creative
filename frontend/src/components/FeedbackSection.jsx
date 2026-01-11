@@ -33,12 +33,12 @@ const FeedbackSection = () => {
     },
     {
       text: "Thank you TD Creative for your impressive work. It was highly professional, creative and attentive to my ideas. The final design exceeded my expectations. I express my heartfelt appreciation. 😍Congratulations for your growth!💐 I highly recommend their services to anyone looking for high-quality, thoughtful graphic design.😎",
-      name: "SmartPro Enlish Academy",
+      name: "SmartPro English Academy",
       avatar: smartPro,
     },
     {
       text: "Congratulations TD creative! You are an excellent and exemplary designer.. You have captured the ideas perfectly in just one visit and registered the logo for the company. Giving the expected color and shape to the customer on time is an excellent act. We wish your company further growth.",
-      name: "Thankamma Auto Mobile",
+      name: "Gnanam's Group of Company",
       avatar: gnanam,
     },
     {
