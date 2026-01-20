@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import tdLogo from "../img/TD.png";
+import danujan from "../img/Danujan.jpeg";
 
 // Add your profile image to src/img/ folder and import it here
 // Example: import profileImage from "../img/profile.jpg";
 // For now using a placeholder - replace with your image
-const profileImage =
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&crop=face";
+const profileImage = danujan;
 
 const AboutSection = () => {
   const stats = [
