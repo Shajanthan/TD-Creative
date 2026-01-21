@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import tdLogo from "../img/TD.png";
+import bgImage from "../img/bg.jpeg";
 
 const HomeSection = () => {
   const scrollToSection = (sectionId) => {
@@ -12,33 +13,40 @@ const HomeSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center relative bg-white overflow-x-hidden"
+      className="relative min-h-screen w-full overflow-x-hidden"
     >
-      {/* Dark grey vertical bars on left and right - hidden on mobile, visible on larger screens */}
-      <div className="hidden md:block absolute left-0 top-0 bottom-0 bg-gray-700"></div>
-      <div className="hidden md:block absolute right-0 top-0 bottom-0 bg-gray-700"></div>
+      <div className="absolute inset-0 flex">
+        <div className="hidden lg:block lg:w-1/2 bg-[rgb(213,217,223)]"></div>
+        <div
+          className="w-full lg:w-1/2 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(${bgImage})`,
+          }}
+        ></div>
+      </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 w-full max-w-full">
+      {/* Content Container */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 my-2 sm:py-12 md:py-20 w-full max-w-full relative z-10 min-h-screen flex items-center">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-7xl mx-auto w-full">
           {/* Left Section - Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-4 sm:space-y-6 text-center md:text-left order-2 md:order-1 w-full"
+            className="space-y-3 sm:space-y-4 md:space-y-6 text-center md:text-left order-2 md:order-1 w-full px-2 sm:px-0"
           >
             {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.3] break-words"
+              className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.3] break-words"
             >
-              <span className="text-[#094162] block mb-2">Crafting your</span>
-              <span className="text-[#094162] block mb-2">
-                <span className="text-orange-500">story</span>, pixel by
+              <span className="text-[#094162] block mb-1 sm:mb-2">We Build</span>
+              <span className="text-[#094162] block mb-1 sm:mb-2">
+                <span className="text-orange-500">Brands</span>
               </span>
-              <span className="text-[#094162] block">pixel.</span>
+              <span className="text-[#094162] block">That Stand Out.</span>
             </motion.h1>
 
             {/* Body Text */}
@@ -46,7 +54,7 @@ const HomeSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-lg text-gray-700 leading-relaxed max-w-lg mx-auto md:mx-0 py-2 sm:py-3"
+              className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-lg mx-auto md:mx-0 py-2 sm:py-3 px-2 sm:px-0"
             >
               Crafting visually compelling stories that elevate brands. Based in
               Sri Lanka, I specialize in bespoke branding, print design, and
@@ -58,17 +66,17 @@ const HomeSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-2 sm:pt-4 justify-center md:justify-start"
+              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-2 sm:pt-4 justify-center md:justify-start px-2 sm:px-0"
             >
               <button
                 onClick={() => scrollToSection("projects")}
-                className="px-6 sm:px-8 py-2.5 sm:py-3 bg-orange-500 text-white rounded-3xl font-semibold hover:bg-orange-600 transition-colors text-sm sm:text-base w-full sm:w-auto"
+                className="px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 bg-orange-500 text-white rounded-3xl font-semibold hover:bg-orange-600 transition-colors text-sm sm:text-base w-full sm:w-auto"
               >
                 Explore More
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-[#094162] text-[#094162] bg-white rounded-3xl font-semibold hover:bg-[#094162] hover:text-white transition-colors text-sm sm:text-base w-full sm:w-auto"
+                className="px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 border-2 border-[#094162] text-[#094162] bg-white rounded-3xl font-semibold hover:bg-[#094162] hover:text-white transition-colors text-sm sm:text-base w-full sm:w-auto"
               >
                 Contact Us
               </button>

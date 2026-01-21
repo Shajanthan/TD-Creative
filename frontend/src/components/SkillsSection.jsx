@@ -109,7 +109,7 @@ const SkillsSection = () => {
             className="relative w-full mb-4 py-8 overflow-visible"
             style={{ isolation: "isolate" }}
           >
-            <h2 className="hidden md:block text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-bold text-gray-200 absolute z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap opacity-50 select-none pointer-events-none">
+            <h2 className="hidden md:block text-4xl md:text-6xl lg:text-8xl xl:text-[106px] font-bold text-gray-200 absolute z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap opacity-50 select-none pointer-events-none">
               Tools I Use
             </h2>
             <motion.h2
@@ -187,7 +187,7 @@ const SkillsSection = () => {
               className="relative w-full mb-4 py-8 overflow-visible"
               style={{ isolation: "isolate" }}
             >
-              <h2 className="hidden md:block text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-bold text-gray-200 absolute z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap opacity-50 select-none pointer-events-none">
+              <h2 className="hidden md:block text-4xl md:text-6xl lg:text-8xl xl:text-[106px] font-bold text-gray-200 absolute z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap opacity-50 select-none pointer-events-none">
                 Services Provided
               </h2>
               <motion.h2

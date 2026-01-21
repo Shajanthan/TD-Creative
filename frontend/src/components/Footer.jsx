@@ -134,18 +134,17 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <FaEnvelope className="text-orange-500 mt-1 flex-shrink-0" />
-                <span className="text-gray-300">hello@designer.com</span>
+                <span className="text-gray-300">tdcreative428@gmail.com</span>
               </li>
               <li className="flex items-start gap-3">
                 <FaPhoneAlt className="text-orange-500 mt-1 flex-shrink-0" />
-                <span className="text-gray-300">+1 (234) 567-890</span>
+                <span className="text-gray-300">+94770118026</span>
               </li>
               <li className="flex items-start gap-3">
                 <FaMapMarkerAlt className="text-orange-500 mt-1 flex-shrink-0" />
                 <div className="text-gray-300">
-                  <p>123 Design Street</p>
-                  <p>San Francisco, CA 94102</p>
-                  <p>United States</p>
+                  <p>No.64, Kilitown, Kilinochchi</p>
+                  <p>Sri Lanka</p>
                 </div>
               </li>
             </ul>

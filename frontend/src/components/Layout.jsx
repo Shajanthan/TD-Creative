@@ -78,16 +78,13 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Main Navigation Bar */}
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed left-0 right-0 z-[51] transition-all duration-300 ${
-          isScrolled || isMobileMenuOpen
-            ? "bg-white/80 backdrop-blur-md shadow-md border-b border-white/20"
-            : "bg-white/80 backdrop-blur-md border-b border-white/20"
-        }`}
+        className={`fixed left-0 right-0 z-[51] transition-all duration-300 border-none ${isScrolled || isMobileMenuOpen
+        ?"bg-white/60 backdrop-blur-md shadow-md border-b border-white/20":""}`}
       >
         <nav className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">

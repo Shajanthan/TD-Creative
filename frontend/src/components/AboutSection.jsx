@@ -17,7 +17,7 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="min-h-screen w-full flex items-center px-4 bg-white"
+      className="min-h-screen w-full flex items-center px-4 bg-white overflow-x-hidden"
     >
       <div className="container mx-auto max-w-7xl w-full py-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -84,9 +84,9 @@ const AboutSection = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative overflow-visible"
           >
-            <div className="relative w-full max-w-[280px] lg:max-w-md mx-auto">
+            <div className="relative w-full max-w-[250px] lg:max-w-md mx-auto overflow-visible">
               {/* Portrait Photo */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -108,7 +108,7 @@ const AboutSection = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.6, type: "spring" }}
-                className="absolute top-[170px] lg:top-[250px] -translate-y-1/2 -right-[40px] md:-right-[50px] w-16 h-16 md:w-20 md:h-20 bg-white rounded-full p-2 md:p-3 shadow-lg flex items-center justify-center z-10"
+                className="absolute top-[170px] lg:top-[250px] -translate-y-1/2 -right-[40px] md:-right-[30px] lg:-right-[50px] w-16 h-16 md:w-20 md:h-20 bg-white rounded-full p-2 md:p-3 shadow-lg flex items-center justify-center z-10"
               >
                 <img
                   src={tdLogo}

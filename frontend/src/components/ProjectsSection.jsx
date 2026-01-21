@@ -69,16 +69,16 @@ const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen py-28 px-4 bg-white overflow-visible"
+      className="min-h-screen py-28 px-4 bg-white overflow-x-hidden"
     >
-      <div className="container mx-auto max-w-7xl text-center overflow-visible">
+      <div className="container mx-auto max-w-7xl text-center overflow-x-hidden">
         {/* Heading and Description */}
         <div className="mb-8">
           <div
             className="relative w-full mb-4 py-8 overflow-visible"
             style={{ isolation: "isolate" }}
           >
-            <h2 className="hidden md:block text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-bold text-gray-200 absolute z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap opacity-50 select-none pointer-events-none">
+            <h2 className="hidden md:block text-4xl md:text-6xl lg:text-8xl xl:text-[106px] font-bold text-gray-200 absolute z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap opacity-50 select-none pointer-events-none">
               Featured Projects
             </h2>
             <motion.h2

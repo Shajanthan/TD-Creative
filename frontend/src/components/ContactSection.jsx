@@ -112,9 +112,9 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen py-28 px-4 bg-gray-50 overflow-visible"
+      className="min-h-screen py-28 px-4 bg-gray-50 overflow-x-hidden"
     >
-      <div className="container mx-auto max-w-7xl overflow-visible">
+      <div className="container mx-auto max-w-7xl overflow-x-hidden">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -126,7 +126,7 @@ const ContactSection = () => {
             className="relative w-full mb-4 py-8 overflow-visible"
             style={{ isolation: "isolate" }}
           >
-            <h2 className="hidden md:block text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-bold text-gray-200 absolute z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap opacity-50 select-none pointer-events-none">
+            <h2 className="hidden md:block text-4xl md:text-6xl lg:text-8xl xl:text-[106px] font-bold text-gray-200 absolute z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap opacity-50 select-none pointer-events-none">
               Get In Touch
             </h2>
             <motion.h2
@@ -242,7 +242,7 @@ const ContactSection = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="John Doe"
+                      placeholder="Enter your Full Name"
                       className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#094162] focus:border-transparent"
                     />
                   </div>
@@ -265,7 +265,7 @@ const ContactSection = () => {
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+1 (234) 567-890"
+                      placeholder="Enter your Phone Number"
                       className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#094162] focus:border-transparent"
                     />
                   </div>
@@ -349,22 +349,26 @@ const ContactSection = () => {
                   <FaEnvelope className="text-[#094162] text-xl mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-medium text-gray-800">Email</p>
-                    <p className="text-sm text-gray-600">hello@designer.com</p>
+                    <p className="text-sm text-gray-600">
+                      tdcreative428@gmail.com
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <FaPhoneAlt className="text-[#094162] text-xl mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-medium text-gray-800">Phone</p>
-                    <p className="text-sm text-gray-600">+1 (234) 567-890</p>
+                    <p className="text-sm text-gray-600">+94770118026</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <FaMapMarkerAlt className="text-[#094162] text-xl mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-medium text-gray-800">Location</p>
-                    <p className="text-sm text-gray-600">San Francisco, CA</p>
-                    <p className="text-sm text-gray-600">United States</p>
+                    <p className="text-sm text-gray-600">
+                      No.64, Kilitown, Kilinochchi
+                    </p>
+                    <p className="text-sm text-gray-600">Sri Lanka</p>
                   </div>
                 </div>
               </div>
